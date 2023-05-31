@@ -1,17 +1,24 @@
-import { RotatingLines } from 'react-loader-spinner';
-import css from './Loader.module.css';
+import { ThreeDots } from 'react-loader-spinner';
+import styled from '@emotion/styled';
 
-export default function Loader() {
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Loader = () => {
   return (
-    <div className={css.Loader}>
-      <RotatingLines
-        strokeColor="rgba(63, 81, 181, 0.8"
-        strokeWidth="5"
-        animationDuration="0.75"
-        width="180"
+    <Container>
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#4fa94d"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
         visible={true}
       />
-      ;
-    </div>
+    </Container>
   );
-}
+};
